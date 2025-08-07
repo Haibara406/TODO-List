@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f2f2f7;
+    color: #000000;
+    overflow: hidden;
+}
+
+/* 深色模式 */
+.dark body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* 选择文本样式 */
+::selection {
+    background-color: #007aff;
+    color: white;
+}
+
+.dark ::selection {
+    background-color: #0a84ff;
+    color: white;
+}
+
+/* 输入框样式 */
+input, textarea {
+    font-family: inherit;
+}
+
+/* 按钮样式 */
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* iOS风格的模糊效果 */
+.ios-blur {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* 动画效果 */
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 0.3s ease;
+}
+
+.fade-enter-from, .fade-leave-to {
+    opacity: 0;
+}
+
+.slide-enter-active, .slide-leave-active {
+    transition: transform 0.3s ease;
+}
+
+.slide-enter-from {
+    transform: translateX(-100%);
+}
+
+.slide-leave-to {
+    transform: translateX(100%);
+}
+
+/* Quill编辑器样式 */
+.ql-editor {
+    font-family: inherit !important;
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+    padding: 16px !important;
+}
+
+.ql-toolbar {
+    border: none !important;
+    border-bottom: 1px solid #e5e5ea !important;
+    padding: 8px 16px !important;
+}
+
+.dark .ql-toolbar {
+    border-bottom-color: #38383a !important;
+    background-color: #1c1c1e !important;
+}
+
+.ql-container {
+    border: none !important;
+    font-family: inherit !important;
+}
+
+.dark .ql-editor {
+    background-color: #1c1c1e !important;
+    color: #ffffff !important;
+}
+
+/* 自定义类 */
+.ios-button {
+    @apply px-4 py-2 rounded-ios font-medium transition-all duration-200;
+}
+
+.ios-button-primary {
+    @apply bg-ios-accent text-white hover:bg-blue-600 dark:bg-ios-accent-dark;
+}
+
+.ios-button-secondary {
+    @apply bg-gray-200 text-gray-800 hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-200;
+}
+
+.ios-card {
+    @apply bg-ios-card dark:bg-ios-card-dark rounded-ios shadow-sm border border-ios-border dark:border-ios-border-dark;
+}
+
+.ios-sidebar {
+    @apply bg-ios-sidebar dark:bg-ios-sidebar-dark border-r border-ios-border dark:border-ios-border-dark;
+}
